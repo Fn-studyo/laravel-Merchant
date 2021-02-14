@@ -90,7 +90,14 @@
                                         <span v-else class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                                                 {{ $page.props.user.name }}
-
+                                            <div class="relative mx-3">
+                                                <button @click="dropdownOpen = ! dropdownOpen"
+                                                    class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
+                                                    <img class="h-full w-full object-cover"
+                                                        src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
+                                                        alt="Your avatar">
+                                                </button>
+                                            </div>
                                                 <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                                 </svg>
