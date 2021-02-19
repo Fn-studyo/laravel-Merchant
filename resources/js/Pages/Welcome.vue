@@ -148,7 +148,7 @@ import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo'
         components: {
             JetAuthenticationCardLogo
         },
-        props: {
+         ps: {
             canLogin: Boolean,
             canRegister: Boolean,
             laravelVersion: String,

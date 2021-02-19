@@ -15,12 +15,6 @@ class CreateShopsTable extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->string('title');
-            $table->text('description');
-            $table->string('address');
-            $table->integer('phone');
-            $table->json('social_media');
             $table->timestamps();
         });
     }

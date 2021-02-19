@@ -17,10 +17,10 @@
                 <jet-input id="email" type="email" class="mt-1 block w-full" v-model="form.email" required />
             </div>
 
-            <div class="mt-4">
-                <jet-label for="shop" value="Shop" />
-                <jet-input id="shop" type="text" class="mt-1 block w-full" v-model="form.shop" required />
-            </div>
+            <!-- <div class="mt-4">
+                <jet-label for="phone" value="Phone" />
+                <jet-input id="phone" type="number" class="mt-1 block w-full" v-model="form.phone" required />
+            </div> -->
 
             <div class="mt-4">
                 <jet-label for="password" value="Password" />
@@ -82,7 +82,7 @@
                 form: this.$inertia.form({
                     name: '',
                     email: '',
-                    shop: '',
+                    //phone: '',
                     password: '',
                     password_confirmation: '',
                     terms: false,

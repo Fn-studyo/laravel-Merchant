@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Shop;
+use Inertia\Inertia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ShopController extends Controller
 {
@@ -14,17 +16,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-       // return view('');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Inertia::render('Shop');
     }
 
     /**
@@ -35,7 +27,24 @@ class ShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|unique:shops|max:255',
+            'address' => 'required|max:255',
+            'phone' => 'required|numeric',
+            'social_media' => 'json'
+        ]);
+
+        if($validated){
+            $shop = new Shop();
+            $shop->name = $request->input('name');
+            $shop->phone = $request->input('phone');
+            $shop->description = $request->input('description');
+            $shop->address = $request->input('address');
+            $shop->social_media = $request->input('social_media');      
+            if($shop->save()){
+                dd('saved shop');
+            }            
+        }
     }
 
     /**

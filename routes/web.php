@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ShopController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -26,6 +27,10 @@ Route::get('/', function () {
 });
 
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+Route::get('/shop', [ShopController::class, 'index'])->name('shop');
+
+Route::post('/shop', [ShopController::class, 'store'])->name('shop.create');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
